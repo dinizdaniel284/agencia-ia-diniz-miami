@@ -1,135 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencia IA Diniz | Luxury Real Estate Agent</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #050505; font-family: 'Inter', sans-serif; color: #e5e5e5; }
-        .luxury-title { font-family: 'Playfair Display', serif; }
-        .terminal-box { background-color: #0a0a0a; border: 1px solid #1a1a1a; box-shadow: 0 30px 60px rgba(0,0,0,0.9); }
-        .gold-text { color: #d4af37; }
-        .btn-gold { background: #d4af37; color: black; font-weight: 700; transition: all 0.4s; cursor: pointer; border: none; }
-        .btn-gold:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
-        .lead-card { background: linear-gradient(145deg, #111, #080808); border: 1px border-gold-text/20; border-radius: 12px; border: 1px solid #1a1a1a; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Luxury Concierge | Agencia IA Diniz</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+background:#0b0b0c;
+color:#eaeaea;
+font-family:Georgia,serif;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.card{
+border:1px solid rgba(212,175,55,0.25);
+background:#111;
+border-radius:12px;
+padding:28px;
+max-width:720px;
+margin:auto;
+margin-top:80px;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+
+.logline{
+opacity:0;
+transform:translateY(8px);
+transition:all .6s ease;
+}
+
+.logline.show{
+opacity:1;
+transform:none;
+}
+
+.cta{
+background:#d4af37;
+color:black;
+padding:12px 20px;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+display:inline-block;
+}
+
+.toggle{
+margin-top:15px;
+font-size:14px;
+opacity:.8;
+cursor:pointer;
+}
+</style>
 </head>
-<body class="flex flex-col items-center py-16 px-6">
 
-    <div class="text-center mb-16 max-w-4xl">
-        <span class="text-[10px] uppercase tracking-[0.5em] text-gray-500 mb-4 block">Built for Luxury Listings</span>
-        <h1 class="luxury-title text-6xl gold-text mb-6">Agencia IA Diniz</h1>
-        <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto">Our AI Agents qualify high-net-worth buyers <span class="text-white font-semibold">instantly</span>, 24/7.</p>
-    </div>
+<body>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl w-full">
-        
-        <div class="lg:col-span-8">
-            <div class="terminal-box rounded-2xl overflow-hidden">
-                <div class="bg-[#111] px-6 py-3 flex items-center justify-between border-b border-[#1a1a1a]">
-                    <div class="flex items-center gap-4">
-                        <div class="flex gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
-                        </div>
-                        <button id="audio-toggle" class="text-[9px] text-gray-500 border border-gray-800 px-3 py-1 rounded-full hover:border-gold-text transition-all uppercase tracking-tighter">
-                            Audio: <span id="audio-status" class="gold-text">Enabled</span>
-                        </button>
-                    </div>
-                    <span class="text-[9px] text-gray-600 font-mono tracking-widest uppercase italic font-bold">Encrypted AI Channel</span>
-                </div>
-                
-                <div id="terminal-content" class="p-10 h-[480px] overflow-y-auto font-mono text-sm leading-relaxed">
-                    <div class="flex flex-col items-center justify-center h-full text-center" id="intro-box">
-                        <p class="text-gray-500 mb-8 max-w-sm font-light italic">Ready to see how we handle a $7.7M inquiry for Marea PH602?</p>
-                        <button id="start-btn" class="btn-gold px-14 py-4 rounded-full uppercase tracking-[0.2em] text-[11px]">
-                            Launch Agent Experience
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="card">
 
-        <div class="lg:col-span-4 flex flex-col gap-6">
-            <h3 class="text-xs uppercase tracking-[0.3em] text-gray-500 font-bold mb-2">Lead Real-Time Data</h3>
-            
-            <div class="lead-card p-6 border-l-2 border-l-[#d4af37]">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="text-[10px] bg-gold-text/10 text-gold-text px-2 py-1 rounded">HOT LEAD</span>
-                    <span class="text-[10px] text-gray-600">Just Now</span>
-                </div>
-                <p class="text-white font-semibold text-lg mb-1">Investor from NYC</p>
-                <p class="text-gray-500 text-xs mb-4">Target: Marea Penthouse 602</p>
-                <div class="space-y-2">
-                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Budget:</span> <span class="text-green-500">$7M+</span></div>
-                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Origin:</span> <span class="text-white">International</span></div>
-                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Status:</span> <span class="text-white italic">Awaiting Call</span></div>
-                </div>
-            </div>
+<div class="gold text-2xl mb-6">
+Private AI Concierge
+</div>
 
-            <div class="p-6 border border-gray-900 rounded-xl">
-                <p class="text-[11px] text-gray-500 italic">"The AI responded before I could even pick up my phone. The lead was already qualified when I saw the notification."</p>
-                <p class="text-gold-text text-[10px] mt-3 font-bold uppercase">— Luxury Agent, Miami Beach</p>
-            </div>
-        </div>
-    </div>
+<div class="text-sm mb-6 opacity-70">
+Powered by Agencia IA Diniz
+</div>
 
-    <script>
-        const content = document.getElementById('terminal-content');
-        const startBtn = document.getElementById('start-btn');
-        const introBox = document.getElementById('intro-box');
-        const audioToggle = document.getElementById('audio-toggle');
-        const audioStatus = document.getElementById('audio-status');
-        
-        let isAudioEnabled = true;
+<div id="log" class="space-y-2 text-sm"></div>
 
-        audioToggle.onclick = () => {
-            isAudioEnabled = !isAudioEnabled;
-            audioStatus.innerText = isAudioEnabled ? "Enabled" : "Disabled";
-            if (!isAudioEnabled) window.speechSynthesis.cancel();
-        };
+<div id="ctaBox" class="hidden mt-6">
 
-        function speak(text) {
-            if (!isAudioEnabled) return;
-            const utterance = new SpeechSynthesisUtterance(text);
-            const voices = window.speechSynthesis.getVoices();
-            const maleVoice = voices.find(v => (v.name.includes('David') || v.name.includes('Google US English')) && v.lang.includes('en'));
-            if (maleVoice) utterance.voice = maleVoice;
-            utterance.rate = 0.9;
-            utterance.pitch = 0.85;
-            window.speechSynthesis.speak(utterance);
-        }
+<div class="gold text-lg mb-2">
+New Qualified Lead
+</div>
 
-        async function typeWriter(text, speed, gold = false) {
-            const span = document.createElement('span');
-            if(gold) span.className = 'gold-text font-bold';
-            content.appendChild(span);
-            speak(text);
-            for (let i = 0; i < text.length; i++) {
-                span.textContent += text.charAt(i);
-                content.scrollTop = content.scrollHeight;
-                await new Promise(r => setTimeout(r, speed));
-            }
-        }
+<div class="text-sm mb-4">
+Name: Alexander Meyer<br>
+Budget: $8M+<br>
+Tour: Tomorrow<br>
+Source: Zurich
+</div>
 
-        const script = [
-            { text: "> SYSTEM: Incoming inquiry from Zurich, Switzerland.", speed: 20 },
-            { text: "\n\n[CONCIERGE]: Welcome. I am the private digital assistant for the Marea PH602 listing. How can I help you today?", speed: 30 },
-            { text: "\n\n[BUYER]: I'm looking for a second home in Miami. Is PH602 still available for $7.7M?", speed: 30 },
-            { text: "\n\n[CONCIERGE]: Yes, it is. Since you are inquiring internationally, would you like a private 4K video tour sent to your WhatsApp?", speed: 35 },
-            { text: "\n\n[QUALIFICATION]: Perfect. To prioritize your request, please confirm your primary residence and if you are currently represented by an agent.", speed: 35 },
-            { text: "\n\n[SYSTEM]: LEAD SECURED. DATA SENT TO AGENT CRM. REDIRECTING TO WHATSAPP...", speed: 10, gold: true }
-        ];
+<button class="cta" onclick="alert('Demo request received')">
+Install this AI on my listings
+</button>
 
-        startBtn.onclick = async () => {
-            introBox.style.display = 'none';
-            for (const line of script) {
-                await typeWriter(line.text, line.speed, line.gold);
-                await new Promise(r => setTimeout(r, 1200));
-            }
-        };
-    </script>
+</div>
+
+<div class="toggle" onclick="toggleAudio()">
+🔊 Voice: <span id="voiceState">ON</span>
+</div>
+
+</div>
+
+<script>
+
+let voiceEnabled=true
+let voices=[]
+
+speechSynthesis.onvoiceschanged=()=>{
+voices=speechSynthesis.getVoices()
+}
+
+function toggleAudio(){
+
+voiceEnabled=!voiceEnabled
+document.getElementById("voiceState").innerText=voiceEnabled?"ON":"OFF"
+
+}
+
+function speak(text){
+
+if(!voiceEnabled) return
+
+const utter=new SpeechSynthesisUtterance(text)
+
+if(voices.length>0){
+utter.voice=voices.find(v=>v.lang.includes("en"))||voices[0]
+}
+
+utter.rate=0.95
+utter.pitch=1
+
+speechSynthesis.speak(utter)
+
+}
+
+function addLine(text){
+
+const log=document.getElementById("log")
+
+const div=document.createElement("div")
+div.className="logline"
+div.textContent=text
+
+log.appendChild(div)
+
+setTimeout(()=>div.classList.add("show"),50)
+
+}
+
+function wait(ms){
+return new Promise(r=>setTimeout(r,ms))
+}
+
+async function runDemo(){
+
+addLine("Initializing luxury buyer intelligence...")
+await wait(1800)
+
+addLine("Scanning global inquiries...")
+await wait(1800)
+
+addLine("High-net-worth inquiry detected")
+await wait(1600)
+
+addLine("Origin: Zurich, Switzerland")
+await wait(1600)
+
+addLine("Checking financial profile...")
+await wait(1800)
+
+addLine("Estimated purchasing power: $8.2M")
+await wait(1800)
+
+addLine("Matching property inventory...")
+await wait(1700)
+
+addLine("Property match found: Marea South Pointe PH602")
+await wait(1700)
+
+addLine("AI concierge initiating conversation...")
+await wait(1500)
+
+const speech="Hello, this is the private concierge team. We received your inquiry about the penthouse. I would love to schedule a private tour for you."
+
+speak(speech)
+
+addLine("Conversation successful")
+await wait(1600)
+
+addLine("Capturing buyer data...")
+await wait(1500)
+
+addLine("Lead secured")
+await wait(1200)
+
+addLine("Sending to agent CRM...")
+await wait(1200)
+
+document.getElementById("ctaBox").classList.remove("hidden")
+
+}
+
+runDemo()
+
+</script>
+
 </body>
 </html>
