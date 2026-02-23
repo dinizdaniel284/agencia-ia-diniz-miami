@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Concierge | Luxury Real Estate Qualification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; color: #e5e5e5; }
+        .luxury-title { font-family: 'Playfair Display', serif; }
+        .terminal-box { background-color: #121212; border: 1px solid #262626; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .cursor { display: inline-block; width: 8px; height: 18px; background-color: #d4af37; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .gold-text { color: #d4af37; }
+        .btn-gold { background: linear-gradient(135deg, #d4af37 0%, #996515 100%); color: black; font-weight: 600; transition: all 0.3s; }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="text-center mb-8 max-w-2xl">
+        <h1 class="luxury-title text-4xl md:text-5xl gold-text mb-4">AI Concierge</h1>
+        <p class="text-gray-400 text-lg">Instant Lead Qualification for High-End Listings</p>
+        <p class="text-sm text-gray-500 mt-2 uppercase tracking-widest italic">Tailored for: Marea South Pointe - PH602</p>
+    </div>
+
+    <div class="terminal-box w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl">
+        <div class="bg-[#1a1a1a] px-4 py-2 flex items-center gap-2 border-b border-[#262626]">
+            <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
+            </div>
+            <span class="text-xs text-gray-500 font-mono ml-2">agencia-ia-diniz-v3.exe</span>
+        </div>
+        
+        <div id="terminal-content" class="p-6 h-[400px] overflow-y-auto font-mono text-sm leading-relaxed whitespace-pre-wrap">
+            <span class="text-gray-600">// Initialize Agencia IA Diniz Private Engine...</span><br>
+            <span class="text-gray-600">// Analysis complete: Marea PH602 ($7.7M)</span><br><br>
+            <button id="start-btn" class="btn-gold px-8 py-3 rounded-full uppercase tracking-widest text-xs">
+                Initialize Luxury Agent Demo
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-8 flex gap-8 text-[10px] uppercase tracking-[0.2em] text-gray-600">
+        <span>Response Time: <b class="text-green-500">2.1s</b></span>
+        <span>Global Availability: <b class="text-white">24/7</b></span>
+        <span>Multi-Language: <b class="text-white">Active</b></span>
+    </div>
+
+    <script>
+        const content = document.getElementById('terminal-content');
+        const startBtn = document.getElementById('start-btn');
+
+        const script = [
+            { text: "\n\n[AGENT]: Good afternoon. Welcome to the private inquiry channel for the Marea South Pointe Penthouse 602.", speed: 40 },
+            { text: "\n\n[ANALYSIS]: I see you are viewing our $7,700,000 listing. This is one of the most exclusive units in South of Fifth, featuring a private rooftop pool.", speed: 30 },
+            { text: "\n\n[QUALIFICATION]: To provide the 'white-glove' service required for this residence, may I ask: Are you currently working with a dedicated buyer's agent?", speed: 35 },
+            { text: "\n\n[PROCESS]: High-net-worth inquiries for PH602 require pre-qualification. Are you looking for a primary residence or a seasonal investment in Miami?", speed: 35 },
+            { text: "\n\n[NEXT STEP]: I can instantly send the floor plans and private video tour to your WhatsApp. Please provide your contact details to proceed with a private showing.", speed: 40 },
+            { text: "\n\n------------------------------------------\n[SYSTEM]: LEAD DATA CAPTURED\nStatus: HIGH PRIORITY\nIntent: Purchase PH602\nBudget Verified: $7.7M+\nLead sent to: Ivan Chorney & Mike Martirena\n------------------------------------------", speed: 10, gold: true }
+        ];
+
+        async function typeWriter(text, speed, gold = false) {
+            const span = document.createElement('span');
+            if(gold) span.className = 'gold-text font-bold';
+            content.appendChild(span);
+            
+            for (let i = 0; i < text.length; i++) {
+                span.textContent += text.charAt(i);
+                content.scrollTop = content.scrollHeight;
+                await new Promise(r => setTimeout(r, speed));
+            }
+        }
+
+        startBtn.onclick = async () => {
+            startBtn.style.display = 'none';
+            for (const line of script) {
+                await typeWriter(line.text, line.speed, line.gold);
+                await new Promise(r => setTimeout(r, 800));
+            }
+        };
+    </script>
+</body>
+</html>
