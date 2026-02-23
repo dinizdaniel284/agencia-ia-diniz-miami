@@ -3,67 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Concierge | Agencia IA Diniz</title>
+    <title>Agencia IA Diniz | Luxury Real Estate Agent</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body { background-color: #050505; font-family: 'Inter', sans-serif; color: #e5e5e5; }
         .luxury-title { font-family: 'Playfair Display', serif; }
-        .terminal-box { background-color: #0a0a0a; border: 1px solid #1a1a1a; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        .terminal-box { background-color: #0a0a0a; border: 1px solid #1a1a1a; box-shadow: 0 30px 60px rgba(0,0,0,0.9); }
         .gold-text { color: #d4af37; }
-        .btn-gold { background: linear-gradient(135deg, #d4af37 0%, #996515 100%); color: black; font-weight: 700; transition: all 0.3s; cursor: pointer; }
-        .btn-gold:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-        .feature-card { background: #0f0f0f; border: 1px solid #1a1a1a; padding: 1.5rem; border-radius: 12px; }
+        .btn-gold { background: #d4af37; color: black; font-weight: 700; transition: all 0.4s; cursor: pointer; border: none; }
+        .btn-gold:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
+        .lead-card { background: linear-gradient(145deg, #111, #080808); border: 1px border-gold-text/20; border-radius: 12px; border: 1px solid #1a1a1a; }
     </style>
 </head>
-<body class="flex flex-col items-center py-12 px-4">
+<body class="flex flex-col items-center py-16 px-6">
 
-    <div class="text-center mb-12 max-w-3xl">
-        <h1 class="luxury-title text-5xl gold-text mb-6">Agencia IA Diniz</h1>
-        <p class="text-xl text-white font-light">The <span class="gold-text font-bold">2-Second</span> Lead Qualification Engine</p>
-        <p class="text-gray-500 mt-4 text-sm uppercase tracking-[0.3em]">Exclusively for Luxury Real Estate Teams</p>
+    <div class="text-center mb-16 max-w-4xl">
+        <span class="text-[10px] uppercase tracking-[0.5em] text-gray-500 mb-4 block">Built for Luxury Listings</span>
+        <h1 class="luxury-title text-6xl gold-text mb-6">Agencia IA Diniz</h1>
+        <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto">Our AI Agents qualify high-net-worth buyers <span class="text-white font-semibold">instantly</span>, 24/7.</p>
     </div>
 
-    <div class="terminal-box w-full max-w-4xl rounded-2xl overflow-hidden mb-16">
-        <div class="bg-[#111] px-6 py-4 flex items-center justify-between border-b border-[#1a1a1a]">
-            <div class="flex items-center gap-6">
-                <div class="flex gap-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
-                </div>
-                <button id="audio-toggle" class="text-[10px] text-gray-400 border border-gray-800 px-3 py-1 rounded-full hover:border-gold-text transition-all">
-                    VOICE: <span id="audio-status" class="gold-text">ON</span>
-                </button>
-            </div>
-            <span class="text-[10px] text-gray-600 font-mono tracking-tighter italic">DEMO_MODE / MAREA_PH602</span>
-        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl w-full">
         
-        <div id="terminal-content" class="p-8 h-[450px] overflow-y-auto font-mono text-sm leading-relaxed">
-            <div class="flex flex-col items-center justify-center h-full text-center" id="intro-box">
-                <p class="text-gray-500 mb-6 max-w-sm">Experience how our Private Concierge qualifies high-net-worth buyers in real-time.</p>
-                <button id="start-btn" class="btn-gold px-12 py-4 rounded-full uppercase tracking-widest text-sm">
-                    Initialize Private Showing Demo
-                </button>
+        <div class="lg:col-span-8">
+            <div class="terminal-box rounded-2xl overflow-hidden">
+                <div class="bg-[#111] px-6 py-3 flex items-center justify-between border-b border-[#1a1a1a]">
+                    <div class="flex items-center gap-4">
+                        <div class="flex gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                        </div>
+                        <button id="audio-toggle" class="text-[9px] text-gray-500 border border-gray-800 px-3 py-1 rounded-full hover:border-gold-text transition-all uppercase tracking-tighter">
+                            Audio: <span id="audio-status" class="gold-text">Enabled</span>
+                        </button>
+                    </div>
+                    <span class="text-[9px] text-gray-600 font-mono tracking-widest uppercase italic font-bold">Encrypted AI Channel</span>
+                </div>
+                
+                <div id="terminal-content" class="p-10 h-[480px] overflow-y-auto font-mono text-sm leading-relaxed">
+                    <div class="flex flex-col items-center justify-center h-full text-center" id="intro-box">
+                        <p class="text-gray-500 mb-8 max-w-sm font-light italic">Ready to see how we handle a $7.7M inquiry for Marea PH602?</p>
+                        <button id="start-btn" class="btn-gold px-14 py-4 rounded-full uppercase tracking-[0.2em] text-[11px]">
+                            Launch Agent Experience
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
-        <div class="feature-card">
-            <span class="gold-text text-2xl font-bold">01</span>
-            <h3 class="text-white font-semibold mt-2">Instant Response</h3>
-            <p class="text-gray-500 text-sm mt-2">Responds in under 2 seconds. 24/7 availability. No lead left behind.</p>
-        </div>
-        <div class="feature-card">
-            <span class="gold-text text-2xl font-bold">02</span>
-            <h3 class="text-white font-semibold mt-2">Lead Filtering</h3>
-            <p class="text-gray-500 text-sm mt-2">Validates budget, representation, and purchase intent automatically.</p>
-        </div>
-        <div class="feature-card">
-            <span class="gold-text text-2xl font-bold">03</span>
-            <h3 class="text-white font-semibold mt-2">Direct Handoff</h3>
-            <p class="text-gray-500 text-sm mt-2">Qualified contact data sent directly to Ivan & Mike's CRM.</p>
+        <div class="lg:col-span-4 flex flex-col gap-6">
+            <h3 class="text-xs uppercase tracking-[0.3em] text-gray-500 font-bold mb-2">Lead Real-Time Data</h3>
+            
+            <div class="lead-card p-6 border-l-2 border-l-[#d4af37]">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-[10px] bg-gold-text/10 text-gold-text px-2 py-1 rounded">HOT LEAD</span>
+                    <span class="text-[10px] text-gray-600">Just Now</span>
+                </div>
+                <p class="text-white font-semibold text-lg mb-1">Investor from NYC</p>
+                <p class="text-gray-500 text-xs mb-4">Target: Marea Penthouse 602</p>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Budget:</span> <span class="text-green-500">$7M+</span></div>
+                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Origin:</span> <span class="text-white">International</span></div>
+                    <div class="flex justify-between text-[11px]"><span class="text-gray-600">Status:</span> <span class="text-white italic">Awaiting Call</span></div>
+                </div>
+            </div>
+
+            <div class="p-6 border border-gray-900 rounded-xl">
+                <p class="text-[11px] text-gray-500 italic">"The AI responded before I could even pick up my phone. The lead was already qualified when I saw the notification."</p>
+                <p class="text-gold-text text-[10px] mt-3 font-bold uppercase">— Luxury Agent, Miami Beach</p>
+            </div>
         </div>
     </div>
 
@@ -78,7 +87,7 @@
 
         audioToggle.onclick = () => {
             isAudioEnabled = !isAudioEnabled;
-            audioStatus.innerText = isAudioEnabled ? "ON" : "OFF";
+            audioStatus.innerText = isAudioEnabled ? "Enabled" : "Disabled";
             if (!isAudioEnabled) window.speechSynthesis.cancel();
         };
 
@@ -88,8 +97,8 @@
             const voices = window.speechSynthesis.getVoices();
             const maleVoice = voices.find(v => (v.name.includes('David') || v.name.includes('Google US English')) && v.lang.includes('en'));
             if (maleVoice) utterance.voice = maleVoice;
-            utterance.rate = 0.95;
-            utterance.pitch = 0.9;
+            utterance.rate = 0.9;
+            utterance.pitch = 0.85;
             window.speechSynthesis.speak(utterance);
         }
 
@@ -106,12 +115,12 @@
         }
 
         const script = [
-            { text: "> Incoming inquiry: Marea South Pointe PH602", speed: 20 },
-            { text: "\n\n[CONCIERGE]: Good afternoon. I'm the digital concierge for Ivan & Mike. How can I assist you with PH602 today?", speed: 35 },
-            { text: "\n\n[BUYER]: Is the rooftop pool private or shared?", speed: 30 },
-            { text: "\n\n[CONCIERGE]: It is 100% private to PH602. It includes a summer kitchen and a 360-degree view of Miami Beach.", speed: 30 },
-            { text: "\n\n[QUALIFICATION]: To schedule a private tour, please confirm: Are you currently working with an agent?", speed: 35 },
-            { text: "\n\n[OUTCOME]: Lead identified as High-Priority. Budget verified. Booking calendar sent.", speed: 20, gold: true }
+            { text: "> SYSTEM: Incoming inquiry from Zurich, Switzerland.", speed: 20 },
+            { text: "\n\n[CONCIERGE]: Welcome. I am the private digital assistant for the Marea PH602 listing. How can I help you today?", speed: 30 },
+            { text: "\n\n[BUYER]: I'm looking for a second home in Miami. Is PH602 still available for $7.7M?", speed: 30 },
+            { text: "\n\n[CONCIERGE]: Yes, it is. Since you are inquiring internationally, would you like a private 4K video tour sent to your WhatsApp?", speed: 35 },
+            { text: "\n\n[QUALIFICATION]: Perfect. To prioritize your request, please confirm your primary residence and if you are currently represented by an agent.", speed: 35 },
+            { text: "\n\n[SYSTEM]: LEAD SECURED. DATA SENT TO AGENT CRM. REDIRECTING TO WHATSAPP...", speed: 10, gold: true }
         ];
 
         startBtn.onclick = async () => {
